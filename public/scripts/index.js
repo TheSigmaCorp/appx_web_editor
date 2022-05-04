@@ -340,6 +340,7 @@ function appendElement(elementType){
     element.addEventListener("mousedown",()=>{
        element.classList.add("dragging")
        element.addEventListener("mousemove",onDrag,false)
+       makeResizable(element,10,10)
    },false)
     element.addEventListener("mouseup",()=>{
        element.classList.remove("dragging")
@@ -349,10 +350,6 @@ function appendElement(elementType){
        element.classList.remove("dragging")
        element.removeEventListener("mousemove",onDrag,false)
    },false)
-
-    element.addEventListener("mousedown",()=>{
-        makeResizable(element,10,10)
-    },false)
 
     /** to make the element resizable **/
     // $( "#-"+element.id ).resizable();

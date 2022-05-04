@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>appX | No Code</title>
+    <link
+      type="text/css" href="./styles/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="./styles/style.css" />
+    <script src="/reload/reload.js"></script>
+  </head>
+  <body>
+    <div id="editor">
+      <div class="header">
+          <span class="projectTitle">The Appx Project</span>
+          <span> | Device - <span class="devices"><i class="bi bi-laptop" onclick="resizeCanvas('desktop')"></i>  <i class="bi bi-tablet" onclick="resizeCanvas('mobile')"></i></span></span>
+      </div>
+      <div class="sidebar">
+        <div class="pages">
+          index.html
+        </div>
+        <div class="elements">
+            <div class="elementsHeader">Elements</div>
+            <div class="elementsHeader" onclick="showHideVisualElements()">Visual Elements <i class="bi bi-caret-down-fill"></i></div>
+            <div class="visualElements">
+                <ul>
+                    <li><i class="bi bi-fonts"></i>Text</li>
+                    <li><i class="bi bi-menu-button"></i>Button</li>
+                    <li><i class="bi bi-emoji-heart-eyes"></i>Icon</li>
+                    <li><i class="bi bi-link"></i>Link</li>
+                    <li><i class="bi bi-card-image"></i>Image</li>
+                    <li><i class="bi bi-play-btn"></i>Video</li>
+                    <li><i class="bi bi-filetype-html"></i>HTML</li>
+                    <li><i class="bi bi-geo-alt-fill"></i>Map</li>
+                    <li><i class="bi bi-exclamation-circle"></i>Alert</li>
+                    <li><i class="bi bi-square"></i>Shape</li>
+                </ul>
+            </div>
+        </div>
+      </div>
+      <div id="canvas" class="canvas-mobile"></div>
+      <div id="alert" style="display: none;" class="alert alert-warning">This is the alert message !</div>
+    </div>
+    <script src="./scripts/index.js"></script>
+    <script
+      src="./scripts/bootstrap.bundle.min.js"
+    ></script>
+  </body>
+</html>

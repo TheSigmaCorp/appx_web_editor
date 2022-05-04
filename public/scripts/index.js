@@ -83,8 +83,9 @@ function onDrag(e){
 }
 
 function appendElement(elementType){
-    let element = document.createElement(elementType);
-    element.className = "btn btn-primary class-"+classCounter
+    let element = createElement(elementType);
+    console.log(elementType)
+    element.className = "class-"+classCounter
     element.id = "identification-"+(classCounter++)
     element.innerText = "Click Me"
     element.style.position = "relative"
@@ -105,4 +106,35 @@ function appendElement(elementType){
 
     /** to make the element resizable **/
     // $( "#-"+element.id ).resizable();
+}
+
+function createElement(elementType){
+    let element;
+    if(elementType === "Text"){
+       element = document.createElement("text")
+    }
+
+    if(elementType === "Button"){
+       element = document.createElement("button")
+    }
+
+    if(elementType === "Link"){
+       element = document.createElement("a")
+    }
+
+    if(elementType === "Image"){
+       element = document.createElement("img")
+    }
+
+    if(elementType === "Video"){
+       element = document.createElement("video")
+    }
+
+
+    if(elementType === "Map"){
+       element = document.createElement("map")
+    }
+
+
+    return element;
 }

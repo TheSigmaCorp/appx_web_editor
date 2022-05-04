@@ -56,8 +56,8 @@ function showAlert(message){
     alert.innerText = message
     alert.style.display = "block";
     setTimeout(() => {
-     alert.style.display = "none";
- }, 1000);
+       alert.style.display = "none";
+   }, 1000);
 }
 
 function dropElementinSpace(){
@@ -74,6 +74,7 @@ function dropElementinSpace(){
 }
 
 function onDrag(e){
+  e.preventDefault()  
   let element = e.target;
   let getStyle = window.getComputedStyle(element);
   let left = parseInt(getStyle.left)
@@ -84,57 +85,69 @@ function onDrag(e){
 
 function appendElement(elementType){
     let element = createElement(elementType);
-    console.log(elementType)
     element.className = "class-"+classCounter
     element.id = "identification-"+(classCounter++)
-    element.innerText = "Click Me"
     element.style.position = "relative"
     canvas.appendChild(element);
     /** to make the element draggable **/
     element.addEventListener("mousedown",()=>{
-         element.classList.add("dragging")
-         element.addEventListener("mousemove",onDrag,false)
-    },false)
+       element.classList.add("dragging")
+       element.addEventListener("mousemove",onDrag,false)
+   },false)
     element.addEventListener("mouseup",()=>{
-         element.classList.remove("dragging")
-         element.removeEventListener("mousemove",onDrag,false)
-    },false)
+       element.classList.remove("dragging")
+       element.removeEventListener("mousemove",onDrag,false)
+   },false)
     element.addEventListener("mouseleave",()=>{
-         element.classList.remove("dragging")
-         element.removeEventListener("mousemove",onDrag,false)
-    },false)
+       element.classList.remove("dragging")
+       element.removeEventListener("mousemove",onDrag,false)
+   },false)
 
     /** to make the element resizable **/
     // $( "#-"+element.id ).resizable();
 }
 
 function createElement(elementType){
-    let element;
-    if(elementType === "Text"){
-       element = document.createElement("text")
-    }
+ let element;
+ if(elementType === "Text"){
+     element = document.createElement("text")
+     element.innerText = "Normal Text"
+ }
 
-    if(elementType === "Button"){
-       element = document.createElement("button")
-    }
+ if(elementType === "Button"){
+     element = document.createElement("button")
+     element.innerText = "Click Me"
+ }
 
-    if(elementType === "Link"){
-       element = document.createElement("a")
-    }
+ if(elementType === "Link"){
+     element = document.createElement("a")
+     element.href = "#"
+     element.innerText = "Click me to open."
+ }
 
-    if(elementType === "Image"){
-       element = document.createElement("img")
-    }
+ if(elementType === "Image"){
+     element = document.createElement("img")
+     element.src = "https://picsum.photos/200/301";
+ }
 
-    if(elementType === "Video"){
-       element = document.createElement("video")
-    }
+ if(elementType === "Video"){
+     element = document.createElement("video")
+    // 👇️ Local file
+    // video.src = 'video.mp4';
 
+    // 👇️ Remote file
+    element.src =
+    'https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4';
 
-    if(elementType === "Map"){
-       element = document.createElement("map")
-    }
+    element.poster =
+    'https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217';
 
+    element.autoplay = false;
+    element.controls = true;
+    element.muted = false;
+    element.height = 240; // 👈️ in px
+    element.width = 320; // 👈️ in px
+}
 
-    return element;
+return element;
 }

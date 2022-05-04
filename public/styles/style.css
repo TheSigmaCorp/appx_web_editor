@@ -55,19 +55,20 @@ body{
     background-color: gray;
     text-align: center;
     margin-top: 5px;
+    cursor: pointer;
 }
 
 .visualElements ul {
     list-style-type: none;
     padding-left: 0px !important;
+    margin-left: 5px;
 }
 
 .visualElements ul li{
     color: black;
-    margin-left: 5px;
     font-weight: 400;
     cursor:pointer;
-    margin: 2px;
+    margin: 5px;
     font-size: medium;
 }
 
@@ -77,6 +78,7 @@ body{
 
 .visualElements ul li i{
   margin-right: 7px;
+  margin-left: 5px;
 }
 
 .header .devices{

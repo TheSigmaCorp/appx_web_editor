@@ -62,7 +62,9 @@ function showAlert(message){
 
 function dropElementinSpace(){
     canvas.addEventListener('click',function(){
-        if(selectedElement){
+        console.log("selectedElement",selectedElement)
+        if(selectedElement != null || selectedElement != undefined){
+            console.log("Create Element")
             appendElement(selectedElement)
             let elements = document.querySelectorAll(".visualElements ul li")
             elements.forEach(el => {
@@ -377,8 +379,12 @@ function createElement(elementType){
  }
 
  if(elementType === "Image"){
-     element = document.createElement("img")
-     element.src = "https://picsum.photos/200/301";
+     element = document.createElement("div")
+
+     let img = document.createElement('img')
+     img.src = "https://picsum.photos/200/301";
+     img.className = "customImage"
+     element.appendChild(img)
  }
 
  if(elementType === "Video"){

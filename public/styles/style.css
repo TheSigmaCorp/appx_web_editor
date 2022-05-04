@@ -111,3 +111,9 @@ body{
     cursor: move !important;
     user-select: none !important;
 }
+
+.customImage {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}

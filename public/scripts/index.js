@@ -90,7 +90,7 @@ function makeResizable(element, minW = 100, minH = 100, size = 20)
     const top = document.createElement('div');
     top.style.width = '100%';
     top.style.height = size + 'px';
-    top.style.backgroundColor = 'transparent';
+    top.style.backgroundColor = 'blue';
     top.style.position = 'absolute';
     top.style.top = - (size/2) + 'px';
     top.style.left = '0px';
@@ -103,7 +103,7 @@ function makeResizable(element, minW = 100, minH = 100, size = 20)
     const bottom = document.createElement('div');
     bottom.style.width = '100%';
     bottom.style.height = size + 'px';
-    bottom.style.backgroundColor = 'transparent';
+    bottom.style.backgroundColor = 'blue';
     bottom.style.position = 'absolute';
     bottom.style.bottom = - (size/2) + 'px';
     bottom.style.left = '0px';
@@ -116,7 +116,7 @@ function makeResizable(element, minW = 100, minH = 100, size = 20)
     const left = document.createElement('div');
     left.style.width = size + 'px';
     left.style.height = '100%';
-    left.style.backgroundColor = 'transparent';
+    left.style.backgroundColor = 'blue';
     left.style.position = 'absolute';
     left.style.top = '0px';
     left.style.left = - (size/2) + 'px';
@@ -129,7 +129,7 @@ function makeResizable(element, minW = 100, minH = 100, size = 20)
     const right = document.createElement('div');
     right.style.width = size + 'px';
     right.style.height = '100%';
-    right.style.backgroundColor = 'transparent';
+    right.style.backgroundColor = 'blue';
     right.style.position = 'absolute';
     right.style.top = '0px';
     right.style.right = - (size/2) + 'px';
@@ -143,7 +143,7 @@ function makeResizable(element, minW = 100, minH = 100, size = 20)
     const corner1 = document.createElement('div');
     corner1.style.width = size + 'px';
     corner1.style.height = size + 'px';
-    corner1.style.backgroundColor = 'transparent';
+    corner1.style.backgroundColor = 'blue';
     corner1.style.position = 'absolute';
     corner1.style.top = - (size/2) + 'px';
     corner1.style.left = - (size/2) + 'px';
@@ -157,7 +157,7 @@ function makeResizable(element, minW = 100, minH = 100, size = 20)
     const corner2 = document.createElement('div');
     corner2.style.width = size + 'px';
     corner2.style.height = size + 'px';
-    corner2.style.backgroundColor = 'transparent';
+    corner2.style.backgroundColor = 'blue';
     corner2.style.position = 'absolute';
     corner2.style.top = - (size/2) + 'px';
     corner2.style.right = - (size/2) + 'px';
@@ -171,7 +171,7 @@ function makeResizable(element, minW = 100, minH = 100, size = 20)
     const corner3 = document.createElement('div');
     corner3.style.width = size + 'px';
     corner3.style.height = size + 'px';
-    corner3.style.backgroundColor = 'transparent';
+    corner3.style.backgroundColor = 'blue';
     corner3.style.position = 'absolute';
     corner3.style.bottom = - (size/2) + 'px';
     corner3.style.left = - (size/2) + 'px';
@@ -185,7 +185,7 @@ function makeResizable(element, minW = 100, minH = 100, size = 20)
     const corner4 = document.createElement('div');
     corner4.style.width = size + 'px';
     corner4.style.height = size + 'px';
-    corner4.style.backgroundColor = 'transparent';
+    corner4.style.backgroundColor = 'blue';
     corner4.style.position = 'absolute';
     corner4.style.bottom = - (size/2) + 'px';
     corner4.style.right = - (size/2) + 'px';
@@ -334,7 +334,7 @@ function makeResizable(element, minW = 100, minH = 100, size = 20)
 
 function appendElement(elementType){
     let element = createElement(elementType);
-    element.className = "class-"+classCounter
+    element.className = element.className + " class-"+classCounter
     element.id = "identification-"+(classCounter++)
     element.style.position = "relative"
     canvas.appendChild(element);
@@ -380,7 +380,7 @@ function createElement(elementType){
 
  if(elementType === "Image"){
      element = document.createElement("div")
-
+     element.className = "imageContainer"
      let img = document.createElement('img')
      img.src = "https://picsum.photos/200/301";
      img.className = "customImage"

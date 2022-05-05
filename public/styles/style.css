@@ -117,3 +117,8 @@ body{
     width: 100%;
     position: relative;
 }
+
+.imageContainer {
+    height: 200px;
+    width: 200px;
+}

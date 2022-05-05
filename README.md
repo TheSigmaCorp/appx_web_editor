@@ -19,4 +19,5 @@ This respository is a part of bigger project `The Sigma.`
 
 For any query please contact askthesigma@gmail.com or join our discord server https://discord.gg/Kcd5j3Sy
 
- 
+
+Ok Lets Go ! 

@@ -1,8 +1,9 @@
-const express = require('express')
+import express from 'express'
 const app = express()
 const port = 3000
-const path = require("path");
-const reload = require("reload")
+import path from "path";
+import reload from "reload"
+const __dirname = path.resolve();
 
 app.use(express.static(path.join(__dirname, 'public')));
 

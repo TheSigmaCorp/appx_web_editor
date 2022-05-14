@@ -2,6 +2,8 @@
 
 import makeResizable from "./resize.js";
 import makeDraggable from "./drag.js";
+import simulateHover from "./hover.js";
+
 export default function createElement(elementType, canvas, classCounter) {
     let element = buildElement(elementType);
     element.className = element.className + " class-" + classCounter
@@ -10,6 +12,7 @@ export default function createElement(elementType, canvas, classCounter) {
     canvas.appendChild(element);
     makeDraggable(element)
     makeResizable(element)
+    simulateHover(element)
 }
 
 function buildElement(elementType) {
@@ -24,7 +27,7 @@ function buildElement(elementType) {
     if (elementType === "Button") {
         element = document.createElement("button")
         element.innerText = "Click Me"
-        element.className = "button"
+        element.className = "button btn btn-success"
     }
 
     if (elementType === "Link") {

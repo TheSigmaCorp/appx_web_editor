@@ -2,7 +2,7 @@
 
 export default function makeResizable(actualElement) {
 	actualElement.addEventListener("click", () => {
-		console.log("Clicked",actualElement.children[0])
+		console.log("Clicked", actualElement.children[0])
 		let element = actualElement.children[0];
 		let resizer;
 		if (!resizer) {
@@ -42,9 +42,9 @@ export default function makeResizable(actualElement) {
 		}
 
 		/** Click outside Element **/
-		document.onclick = function(e){
-			console.log(e.target.parentNode,element)
-			if(e.target !== element){
+		document.onclick = function (e) {
+			console.log(e.target.parentNode, element)
+			if (e.target !== element) {
 				resizer?.remove();
 				element?.classList?.remove('resizable')
 			}

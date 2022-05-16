@@ -121,7 +121,7 @@ body {
 
 .resizable {
   position: relative !important;
-  outline: 2px dashed red !important;
+  outline: 1px dashed red !important;
   border: none;
 }
 .resizer {

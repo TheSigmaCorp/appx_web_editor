@@ -53,7 +53,8 @@ function showAlert(message) {
 }
 
 function dropElementinSpace() {
-    canvas.addEventListener('click', function () {
+    canvas.addEventListener('click', function (e) {
+        console.log(e.key)
         if (selectedElement != null || selectedElement != undefined) {
             console.log("Create Element")
             createElement(selectedElement, canvas, classCounter++);

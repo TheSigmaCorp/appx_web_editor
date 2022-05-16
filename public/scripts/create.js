@@ -3,6 +3,7 @@
 import makeResizable from "./resize.js";
 import makeDraggable from "./drag.js";
 import simulateHover from "./hover.js";
+import openProperties from "./properties.js"
 
 export default function createElement(elementType, canvas, classCounter) {
     let element = buildElement(elementType);
@@ -13,6 +14,7 @@ export default function createElement(elementType, canvas, classCounter) {
     makeDraggable(element)
     makeResizable(element)
     simulateHover(element)
+    openProperties(element)
 }
 
 function buildElement(elementType) {
